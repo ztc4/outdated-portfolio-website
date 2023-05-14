@@ -19,28 +19,7 @@ body{
    
 }
 
-/* .link{
-    color: red;
-    text-decoration: none;
-    font-size: 24px;
-    margin: 20px 20px 20px 20px;
-    padding:auto;
-}
-.link:hover{
-    background-color: #222222;
-    border-bottom: 2px solid red;
-}
-nav{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    border-bottom: 1px solid grey;
-    margin: none;
-    padding: none;
-    position: sticky;
-    box-sizing: border-box;
-} */
+
  #center{
  display: flex;
  flex-direction: column;
@@ -189,6 +168,8 @@ section h2{
 /*Project*/
 #project-section{
     width: 50%;
+    height: min-content;
+    
 
 }
 .project{
@@ -201,7 +182,7 @@ section h2{
     margin: 15px 0px;
 }
 .project h6{
-    font-size: 20px;
+    font-size: 30px;
     margin: 0px;
     padding: 5px;
     color: white;
@@ -240,7 +221,7 @@ section h2{
     
 }
 .about-project{
-    height: 100%;
+    height: 100vh;
     width: 100%;
     color: white;
     position: fixed;
@@ -248,27 +229,44 @@ section h2{
     left: 0;
     background-color: #333;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding-top: 40px;
     align-items: center;
+   overflow: scroll;
    
     
 }
+.each-image{
+    max-height: 1600px;
+    max-width: 1080px;
+}
+
 #descript-half{
-    width: 30%;
-    height: 100%;
+    width: 50%;
+    min-height: 100vh;
     /* background-color: #0ff; */
     display: flex;
     flex-direction: column;
     padding: 10px;
     align-items: center;
+    
+    
 }
 #close-button{
-    height: 50px;
-    width: 300px;
-    background-color: rgb(117,117,117);
+    height: 60px;
+    width: 200px;
+
+    background-color: #333;
     border: none;
     margin-top: 40px;
+    z-index: 4;
+    margin: 5px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #ddd;
+    
 }
 #close-button:hover{
     cursor: pointer;
@@ -276,17 +274,14 @@ section h2{
 }
 #img-half{
     width: 70%;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
     padding: 20px;
     border-radius: 5px;
 }
-#img-half img{
-    height: 80%;
-    padding: 7px;
-    
+
 }
 #img-half img:hover{
 transform: scale(1.1);
@@ -444,14 +439,7 @@ footer{
     margin: 15px 0px;
     box-sizing: border-box;
 }
-.project h6{
-    font-size: 15px;
-    margin: 0px;
-    padding: 5px;
-    color: white;
-    margin-left: 5%;
 
-}
 .project ul{
    list-style-type: none;
    display: flex;
@@ -518,9 +506,11 @@ footer{
     height: 200px;
 }
 #img-half{
+    margin-top: 400px;
     display: flex;
     flex-direction: column;
     margin-bottom: 200px;
+    position: relative;
 }
 #descript-half{
     width: 100%;
@@ -532,9 +522,7 @@ footer{
     align-items: center;
     
 }
-#descript-half h6{
-    font-size: 20px;
-}
+
 #descript-half p{
     padding: 10px;
 }
@@ -554,4 +542,33 @@ footer{
     color: white;
   
     
+}
+
+.test1{
+    display: flex;
+    z-index: 5;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 50vw;
+    font-size: 40px;
+    
+    font-size: 16;
+    overflow: hidden;
+  
+    
+    
+   
+    line-height: 16px;
+    
+
+    
+
+}
+.test1 h6{
+    font-size: 8em;
+    margin: none;
+    padding: none;
+}
+.test1 #test-images{
+    overflow-x:scroll
 }

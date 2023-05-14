@@ -18,8 +18,59 @@ const projects = [{
     {name: "Create Note", link: "./images/Create-Note.png"},
     {name: "Group page", link: "./images/Current-Group.png"},
     {name: "Edit Note", link: "./images/Edit-Note.png"}
+],
+accomplishments: `The first accomplishment would most likely be learning Next.js, it was what I set off to do, so no surprise there.
+ An unexpected accomplishment would be learning Tailwind, I made a mockery of it before, I thought it made the code look like gibberish 
+but now I'm contemplating remaking this very portfolio site using it and my 500+ lines of css for this site look like garbage in comparison.`,
+githubLink: "https://github.com/ztc4/Full-Stack-Task-App",
+deployment: "",
+
+},
+{
+    title: "Ecommerce site w/ stripe as payment system",
+    goals: `Learn how to use Stripe Api.
+    Learn the ins and outs of Next.js, mainly how to use the Search Engine Optimizations features and,
+    making a backend using the in-built api features `,
+    description: `The project itself is simplistic itself, try to mimic an online shopping site.
+     I focused less on login/logout functionally and instead went for just a simple cart feature that connected to stripe.
+      I somehow found the tradeoffs that next.js can inccur with trying to optimize SEO and using react client components.  `,
+    issues:` I couldn't get the inbuilt api to work how I wanted(I was on a experimental version at the time) so just opted for an outside server with express.js.
+     I also made errors in structuring which components should be clientside & which should be server side.
+     This ended up with me not having an overarching state(redux,context) and instead making several extra api calls to my server and sending more data than it should be.
+     I once messed up my project playing with TypeScript, so I had to find a git version that didn't mess up my deploy.
+     `,
+    images: [
+    {name: "homescreen", link: "./images/Home-Screen.png"},
+
+],
+    accomplishments: `The first accomplishment would most likely be learning Next.js, it was what I set off to do, so no surprise there.
+     An unexpected accomplishment would be learning Tailwind, I made a mockery of it before, I thought it made the code look like gibberish 
+    but now I'm contemplating remaking this very portfolio site using it and my 500+ lines of css for this site look like garbage in comparison.`,
+    githubLink: "https://github.com/ztc4/Ecommerce-Nextjs",
+    deployment: "https://ecommerce-portfolio-website.vercel.app/",
+
+},
+{
+    title: "Javascript Personal Game",
+    goals: `Not many goals going into this, Just generally interested in exploring the event Listeners behind games and like the oop principles it showed in videos.`,
+    description: `A game that allow you to move the your player, interact with other characters(npcs) that allow you to access dialogs to understand your current task.`,
+    issues:` Videos were boring so I dropped them after learning the basic collision using squares, and manipulation of the canvas itself.
+     `,
+    images: [
+    {name: "homescreen", link: "./images/Home-Screen.png"},
+
+],
+    accomplishments: `The first accomplishment would most likely be learning Next.js, it was what I set off to do, so no surprise there.
+     An unexpected accomplishment would be learning Tailwind, I made a mockery of it before, I thought it made the code look like gibberish 
+    but now I'm contemplating remaking this very portfolio site using it and my 500+ lines of css for this site look like garbage in comparison.`,
+    githubLink: "https://github.com/ztc4/Ecommerce-Nextjs",
+    deployment: "https://ecommerce-portfolio-website.vercel.app/",
+
+}
+
+
+
 ]
-}]
 
 //mobile button to open nav
 function navButtonClick(){
@@ -32,64 +83,70 @@ mobileNavButton.addEventListener("click", navButtonClick)
 
 //projects
 let project1 = document.getElementById("project-1");
+let project2 = document.getElementById("project-2");
+let project3 = document.getElementById("project-3");
 let openProject = document.getElementById("more-project");
 let exitProject = document.getElementById("exit-project");
-let descriptHalf = document.getElementById("descript-half");
-let imgHalf = document.getElementById("img-half");
+let moreProject = document.getElementById("more-project");
 let body = document.getElementsByTagName("body")[0]
 console.log(window.innerWidth < 768)
 
-let close = ()=>{
-    openProject.classList.toggle("about-project");
-    descriptHalf.innerHTML = ""
-    imgHalf.innerHTML = ""
-    body.style.overflowY = "scroll"
-    imgHalf.style.overflowY = "hidden";
+function close (){
+    console.log("closed")
+    
+    moreProject.innerHTML= "Click on a Project to expand"
+
+
+
     
 };
 
 function projectExtra(num){
+    moreProject.classList.add("test1")
+   
+    
     console.log("clicked")
-    body.style.overflowY = "hidden"
-    openProject.classList.toggle("about-project")
-    imgHalf.style.overflowY = "scroll";
+    body.style.overflowY = "scroll"
+
+
     //pictures
-    let images = projects[num].images.map(current => `<img src="${current.link}" alt="${current.name}" class="click-image-expand"/>`)
+
+    let images = projects[num].images.map(current => `<img src="${current.link}" alt="${current.name}" class="each-image"/>`)
     images = images.join("")
    
 
-    //description
-    descriptHalf.innerHTML = `
-   
-    <h4>${projects[num].title}</h4>
-    <h6>Description:</h6>
+    moreProject.innerHTML = `
+    
+    <h3>${projects[num].title}</h3>
+    <h4>Description:</h4>
     <p>${projects[num].description}</p>
-    <h6>Goals:</h6>
+    <h4>Goals:</h4>
     <p>${projects[num].goals}</p>
-    <h6>Issues:</h6>
+    <h4>Issues:</h4>
     <p>${projects[num].issues}</p>
+    <h4>Accomplishments:</h4>
+    <p>${projects[num].accomplishments}</p>
+    <h4>Github:<a href="${projects[num].githubLink}">Link to github</a></h4>
+    <h4>Deployment:<a href="${projects[num].deployment}">Link to Deployment</a></h4>
+    <a href="./images/Home-Screen.png"></a>
+    <button id="close-button" >Exit</button>
+    <div id="test-images" >${images}</div>
     
-    <button id="close-button">Exit</button>
-    ${window.innerWidth <= 768 ? images: ""}
     
+    `
+    moreProject.classList.toggle("test1")
+    document.getElementById("close-button").addEventListener("click", close)
 
-    ` 
-    let closeButton = document.getElementById("close-button");
-    closeButton.addEventListener("click", close);
-    closeButton.classList.toggle("about-button")
-    closeButton.style.backgroundColor = "red;"
 
-    
 
-    //image
-    if(window.innerWidth > 768){
-    imgHalf.innerHTML = images
-}
-    // document.getElementById("close-button").addEventListener("click", close)
-    
-    // openProject.appendChild(button)
     
 }
 
-// exitProject.addEventListener("click", projectExtra)
+
+
+//task
 project1.addEventListener("click",()=>projectExtra(0))
+//ecommerce
+project2.addEventListener("click",()=>projectExtra(1))
+//game
+project3.addEventListener("click",()=>projectExtra(2))
