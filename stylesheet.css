@@ -551,6 +551,7 @@ footer{
     min-height: 100vh;
     min-width: 50vw;
     font-size: 40px;
+    background-color: beige;
     
     font-size: 16;
     overflow: hidden;

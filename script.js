@@ -52,19 +52,17 @@ deployment: "",
 },
 {
     title: "Javascript Personal Game",
-    goals: `Not many goals going into this, Just generally interested in exploring the event Listeners behind games and like the oop principles it showed in videos.`,
-    description: `A game that allow you to move the your player, interact with other characters(npcs) that allow you to access dialogs to understand your current task.`,
+    goals: `Not many goals going into this, Just generally interested in exploring the event Listeners behind games and the oop principles that was shown in small tutorial video games.`,
+    description: `A game that allow you to move the your player, interact with other characters(npcs) that allow you to access dialogs to understand your current task and even fight enemies.`,
     issues:` Videos were boring so I dropped them after learning the basic collision using squares, and manipulation of the canvas itself.
      `,
     images: [
-    {name: "homescreen", link: "./images/Home-Screen.png"},
+    {name: "My personal intruduction to gaming ", link: "./images/Home-Screen.png"},
 
 ],
-    accomplishments: `The first accomplishment would most likely be learning Next.js, it was what I set off to do, so no surprise there.
-     An unexpected accomplishment would be learning Tailwind, I made a mockery of it before, I thought it made the code look like gibberish 
-    but now I'm contemplating remaking this very portfolio site using it and my 500+ lines of css for this site look like garbage in comparison.`,
-    githubLink: "https://github.com/ztc4/Ecommerce-Nextjs",
-    deployment: "https://ecommerce-portfolio-website.vercel.app/",
+    accomplishments: `Greater understanding writing code in a non web-development sense`,
+    githubLink: "https://github.com/ztc4",
+    deployment: "",
 
 }
 
